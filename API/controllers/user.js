@@ -47,7 +47,7 @@ exports.login = (req, res, next) => {
                         return res.status(401).json({ error: "Mot de passe incorrect !" });
                     }
                     token = jwt.sign({ username: req.body.username }, config.server.key, { expiresIn: "24h" });
-                    res.cookie("AUTH_COOKIE", token);
+                    // res.cookie("AUTH_COOKIE", token);
                     res.status(200).json({ token: token });
                 });
             })
@@ -60,7 +60,7 @@ exports.login = (req, res, next) => {
 };
 
 exports.logout = (req, res, next) => {
-    res.clearCookie("AUTH_COOKIE");
+    // res.clearCookie("AUTH_COOKIE");
     res.status(200).json({ message: "Auth token clear" });
 };
 
@@ -144,12 +144,13 @@ exports.resetPassword = (req, res, next) => {
     }
 };
 
+// todo use token in request body
 exports.updateCreditCard = (req, res, next) => {
     User.updateOne({ username: req.auth.username }, { creditCard: req.body.creditCard })
         .then((result) => {
             console.log(result);
             if (result.modifiedCount > 0) {
-                return res.status(200).json({ message: "Creadit card updated" });
+                return res.status(200).json({ message: "Credit card updated" });
             }
             return res.status(500).json({ message: "Unable to update credit card" });
         })

@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const config = require('./config');
 const cookieParser = require("cookie-parser");
 
-const cookie = require("./middleware/cookie");
 const apiRoutes = require("./routes/api");
 
 /*
@@ -37,6 +36,6 @@ app.get("/online", (req, res, next) => {
     });
 });
 
-app.use("/api", cookie, apiRoutes);
+app.use("/api", apiRoutes);
 
 module.exports = app;
