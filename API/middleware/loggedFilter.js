@@ -5,7 +5,6 @@ module.exports = (req, res, next) => {
     try {
         let decodedToken = jwt.verify(req.body.jwt, config.server.key);
         let username = decodedToken.username;
-
         req.auth = {
             username: username,
         };

@@ -54,7 +54,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"Hugo\",\r\n    \"password\": \"password\"\r\n}",
+							"raw": "{\r\n    \"username\": \"Hugo\",\r\n    \"password\": \"aaa\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -213,7 +213,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"creditCard\": \"user\"\r\n}",
+							"raw": "{\r\n    \"creditCard\": \"users\",\r\n    \"jwt\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikh1Z28iLCJpYXQiOjE2ODI1MzU2NzEsImV4cCI6MTY4MjYyMjA3MX0.8CAAIoXInxckiMWw1PkXXGMTLWGTw5ZQCChxleMGKJ8\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -229,6 +229,39 @@
 								"api",
 								"user",
 								"updateCreditCard"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "File",
+			"item": [
+				{
+					"name": "Update config",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"path\" : \".env\",\r\n    \"jwt\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikh1Z28iLCJpYXQiOjE2ODI1MzU1MzAsImV4cCI6MTY4MjYyMTkzMH0.0a-KxzEDf8d1CkWj9zg-UR4s-BPda9ycZkxUtuX_rn0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/file/updateConfig",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"file",
+								"updateConfig"
 							]
 						}
 					},

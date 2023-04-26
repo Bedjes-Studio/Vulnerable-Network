@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-const loggedFilter = require("../middleware/loggedFilter");
 
 const userRoutes = require("./user");
+const fileRoutes = require("./file");
 
 router.use("/user", userRoutes);
+router.use("/file", fileRoutes);
 
 module.exports = router;
