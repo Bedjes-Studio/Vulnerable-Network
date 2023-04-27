@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require('mongoose');
+const cors = require("cors");
 const config = require('./config');
 const cookieParser = require("cookie-parser");
 
@@ -12,6 +13,7 @@ const apiRoutes = require("./routes/api");
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 app.set("view engine", "ejs");
 
 /* 

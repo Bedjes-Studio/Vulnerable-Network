@@ -1,10 +1,12 @@
-import HelloWorld from '@/views/HelloWorld.vue';
-import ExampleView from '@/views/ExampleView.vue';
+import LoginView from '@/views/LoginView.vue';
+import ImagesView from '@/views/ImagesView.vue';
+import ImageView from '@/views/ImageView.vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
 
 const routes = [
-    {path: "/", component: HelloWorld},
-    {path: "/ailleurs", component: ExampleView},
+    {path: "/", component: LoginView},
+    {path: "/images", component: ImagesView},
+    {path: "/image/:id", component: ImageView}
 ];
 
 const router = createRouter({
