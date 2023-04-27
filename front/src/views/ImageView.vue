@@ -4,7 +4,7 @@
     <img v-else-if="$route.params.id==3" src="@/assets/3.jpg">
     <img v-else src="@/assets/4.jpg">
     <form method="post">
-        <input v-model="cardNumber" type="text" name="cardNumber">
+        <input v-model="cardNumber" placeholder="Enter your credit card number" type="text" name="cardNumber">
         <button @click.prevent="buy">
             Buy
         </button>
