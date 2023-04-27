@@ -5,6 +5,9 @@
             Submit config file
         </button>
     </form>
+    <div class="data">
+        {{data}}
+    </div>
 </template>
 
 <script>
@@ -14,7 +17,8 @@ export default{
     name: "AdminView",
     data(){
         return {
-            path: ""
+            path: "",
+            data: {}
         }
     },
     computed: {
@@ -22,13 +26,14 @@ export default{
     },
     methods: {
         async sendConfig(){
-            await fetch("http://localhost:8080/api/file/updateConfig", {
+            let res = await fetch("http://localhost:8080/api/file/updateConfig", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({path: this.path, jwt: this.loginStore.token})
             });
+            this.data = await res.json();
         }
     }
 }
